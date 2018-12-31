@@ -1,6 +1,7 @@
 import random
 
 print("Bem vindo ao jogo de adivinhação!")
+pontos = 1000;
 print("Qual nível de dificuldade?")
 print("(1) Fácil\n(2) Médio\n(3) Dificil")
 nivel = int(input("Defina o nivel: "))
@@ -12,8 +13,6 @@ elif (nivel == 3):
     total_tentativas = 5
 num_secreto = random.randrange(1, 101)
 
-
-
 for rodada in range(1, total_tentativas + 1):
     print("\nTentativa", rodada, " de ", total_tentativas)
     chute = int(input("Digite o seu numero entre 0 e 100: "))
@@ -23,9 +22,10 @@ for rodada in range(1, total_tentativas + 1):
     print("Você digitou ", chute)
 
     if (num_secreto == chute):
-        print("Você acertou!")
+        print("Você acertou! E fez ", pontos, " pontos!")
         break
     else:
+        pontos = pontos - abs(chute - num_secreto)  # ABS numero absoluto
         if (chute > num_secreto):
             print("Você errou! O chute foi maior.")
         elif (chute < num_secreto):
