@@ -1,10 +1,21 @@
-print("Bem vindo ao jogo de adivinhação!")
+import random
 
-num_secreto = 42
-total_tentativas = 3
+print("Bem vindo ao jogo de adivinhação!")
+print("Qual nível de dificuldade?")
+print("(1) Fácil\n(2) Médio\n(3) Dificil")
+nivel = int(input("Defina o nivel: "))
+if (nivel == 1):
+    total_tentativas = 20
+elif (nivel == 2):
+    total_tentativas = 10
+elif (nivel == 3):
+    total_tentativas = 5
+num_secreto = random.randrange(1, 101)
+
+
 
 for rodada in range(1, total_tentativas + 1):
-    print("\nTentativa", rodada, " de 3")
+    print("\nTentativa", rodada, " de ", total_tentativas)
     chute = int(input("Digite o seu numero entre 0 e 100: "))
     if (chute < 1 or chute > 100):
         print("Você digitou um valor invalido.")
@@ -19,4 +30,4 @@ for rodada in range(1, total_tentativas + 1):
             print("Você errou! O chute foi maior.")
         elif (chute < num_secreto):
             print("Você errou! O chute foi menor.")
-print("Fim de jogo!")
+print("Fim de jogo! O numero era ", num_secreto)
