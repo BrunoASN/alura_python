@@ -33,5 +33,6 @@ def jogar_adivinhacao():
                 print("Você errou! O chute foi menor.")
     print("Fim de jogo! O numero era ", num_secreto)
 
-if(__name__ == "__main__"):
+
+if (__name__ == "__main__"):
     jogar_adivinhacao()
