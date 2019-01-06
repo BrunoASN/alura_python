@@ -6,10 +6,12 @@ def jogar_forca():
     acertou = False
 
     while (not enforcou and not acertou):
-        chute = input("Qual letra? ")
+        chute = input("Qual letra? ")  # Retira os espaços
+        chute = chute.strip()
+
         index = 0
         for letra in palavra_secreta:
-            if (chute == letra):
+            if (chute.upper() == letra.upper()):  # unper retorna sempre em maisculas, para minusculas utilizar o lower
                 print("Encontrei a letra {} na posição {}".format(letra, index))
             index = index + 1
 
