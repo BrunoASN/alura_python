@@ -33,7 +33,7 @@ def jogar_forca():
     if (acertou):
         print("Parabéns você ganhou!")
     else:
-        print("Você perdeu!")
+        print("Você perdeu, a palavra secreta era",format(palavra_secreta))
     print("Fim de jogo")
 
 def carrega_palavra():
